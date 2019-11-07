@@ -42,7 +42,7 @@ app.post("/", function(req, res){
         url: "https://us20.api.mailchimp.com/3.0/lists/07faaf5163",
         method: "POST",
         headers: {"Authorization": "lucas1 63abddbc3f90d78145056ec966423956-us20"},
-        body: jsondata
+        // body: jsondata
     };
 
     request(option, function(error, response, body){
@@ -69,7 +69,9 @@ app.post("/", function(req, res){
     });
 });
 
-
+app.post("/failure", function(req, res){
+    res.redirect("/");
+})
 
 app.listen(3000, function () {
     console.log("Listening to port 3000");
